@@ -74,10 +74,10 @@
                               <td>November 03, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-12">
-                                       <a href="./delete-log.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col-12">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Log" data-name="Sample Log" data-model="Logs" data-c-model="" data-return-ct="Admin" data-return-ac="activity-logs" data-return-id="">
+                                          <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>
