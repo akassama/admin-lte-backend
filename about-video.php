@@ -84,7 +84,7 @@
                               <td>
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <a href="./edit-post.php">
+                                       <a href="./edit-about-video.php">
                                        <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
                                        </a>
                                     </div>

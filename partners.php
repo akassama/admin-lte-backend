@@ -50,7 +50,7 @@
                   </div>
                   <div class="card-body">
                      <table id="example1" class="table table-bordered table-striped dataTable">
-                        <a href="./add-partner" class="float-right mb-2">
+                        <a href="./add-partner.php" class="float-right mb-2">
                            <button type="button" class="btn btn-outline-primary">
                            <i class="fas fa-plus"></i> Add Partners
                            </button>
@@ -96,20 +96,15 @@
                               <td class="d-none d-xl-table-cell">March 30, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-4">
-                                       <a href="./edit-post.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-partner.php">
+                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-4">
-                                       <a href="./navigation-details.php">
-                                       <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i> Details</button>
-                                       </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                       <a href="./delete-post.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Record" data-name="Sample Record" data-model="Records" data-c-model="" data-return-ct="Admin" data-return-ac="manage-record" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>

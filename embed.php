@@ -21,12 +21,12 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Donation Page</h1>
+                        <h1>Embed Page</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item active">Manage Donation Page</li>
+                           <li class="breadcrumb-item active">Manage Embed Page</li>
                         </ol>
                      </div>
                   </div>
@@ -38,7 +38,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Manage Donation Page</h3>
+                     <h3 class="card-title">Manage Embed Page</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -50,18 +50,16 @@
                   </div>
                   <div class="card-body">
                      <table id="example1" class="table table-bordered table-striped dataTable">
-                        <a href="./add-donation" class="float-right mb-2">
+                        <a href="./add-embed.php" class="float-right mb-2">
                            <button type="button" class="btn btn-outline-primary">
-                           <i class="fas fa-plus"></i> Add Donation Page
+                           <i class="fas fa-plus"></i> Add Embed Page
                            </button>
                         </a>
                         <thead>
                            <tr>
                               <th>#</th>
-                              <th>Campaign Image</th>
                               <th>Title</th>
-                              <th class="tw-20">Description</th>
-                              <th>Type</th>
+                              <th class="tw-25">URL</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th>Action</th>
@@ -71,16 +69,17 @@
                            <tr>
                               <td> 1 </td>
                               <td>
-                                 <a class="text-decoration-none text-dark" href="#"> <img src="https://via.placeholder.com/75" class="rounded" width="100" height="75" alt="1 in 3 people globally do not have access to safe drinking water &#x2013; UNICEF"> </a>
+                                 Donation Page
                               </td>
                               <td>
-                                 John Hunt
-                              </td>
-                              <td>
-                                 Chief Director
-                              </td>
-                              <td>
-                                 Embed
+                                 <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="Record1" value="https://help.givingfuel.com/en/" readonly>
+                                    <div class="input-group-append">
+                                       <button class="btn btn-outline-secondary copy-btn" type="button" data-clipboard-target="#Record1" data-toggle="tooltip" data-placement="right" title="Copy">
+                                       <i class="fas fa-copy"></i>
+                                       </button>
+                                    </div>
+                                 </div>
                               </td>
                               <td>
                                  <button class="btn btn-success"><i class="fas fa-check"></i> Published</button>
@@ -88,20 +87,20 @@
                               <td class="d-none d-xl-table-cell">March 30, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-4">
-                                       <a href="./edit-donation.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-embed.php">
+                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-4">
-                                       <a href="./donation-details.php">
-                                       <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i> Details</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-embed.php">
+                                       <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-4">
-                                       <a href="./delete-donation.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Embed" data-name="Sample Embed Page" data-model="Embeds" data-c-model="" data-return-ct="Admin" data-return-ac="manage-embeds" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>
@@ -109,11 +108,9 @@
                         </tbody>
                         <tfoot>
                            <tr>
-                              <th>#</th>
-                              <th>Campaign Image</th>
+                           <th>#</th>
                               <th>Title</th>
-                              <th class="tw-20">Description</th>
-                              <th>Type</th>
+                              <th class="tw-25">URL</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th>Action</th>

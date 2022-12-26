@@ -118,17 +118,17 @@
                     <div class="row">
                       <div class="col mb-1">
                         <a href="./edit-page.php">
-                          <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                          <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                         </a>
                       </div>
                       <div class="col mb-1">
                         <a href="./page-details.php">
-                          <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i> Details</button>
+                          <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i></button>
                         </a>
                       </div>
                       <div class="col mb-1">
                         <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Page" data-name="Sample Page" data-model="Pages" data-c-model="GalleryImages" data-return-ct="Admin" data-return-ac="manage-posts" data-return-id="">
-                          <i class="fa fa-trash"></i> Delete
+                          <i class="fa fa-trash"></i>
                         </button>
                       </div>
                     </div>

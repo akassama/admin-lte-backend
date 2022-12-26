@@ -97,7 +97,7 @@
                   <td>
                     <div class="row">
                       <div class="col mb-1">
-                        <a href="./edit-category.php">
+                        <a href="./add-category.php">
                           <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                         </a>
                       </div>

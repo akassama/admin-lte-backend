@@ -50,7 +50,7 @@
                   </div>
                   <div class="card-body">
                      <table id="example1" class="table table-bordered table-striped dataTable">
-                        <a href="./add-video" class="float-right mb-2">
+                        <a href="./add-video.php" class="float-right mb-2">
                         <button type="button" class="btn btn-outline-primary">
                         <i class="fas fa-plus"></i> Add Videos
                         </button>
@@ -61,6 +61,7 @@
                               <th class="tw-15">Name</th>
                               <th class="tw-25">Description</th>
                               <th class="tw-15">Video</th>
+                              <th>Tags</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th class="tw-15">Action</th>
@@ -87,20 +88,23 @@
                                  </div>
                               </td>
                               <td>
+                                 <span class="badge bg-info mr-1">Demo</span>
+                              </td>
+                              <td>
                                  <button class="btn btn-success"><i class="fas fa-check"></i> Published</button>
                               </td>
                               <td>June 29, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <a href="./edit-post.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-video.php">
+                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-6">
-                                       <a href="./delete-post.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Video" data-name="Sample Video" data-model="Videos" data-c-model="GalleryImages" data-return-ct="Admin" data-return-ac="manage-videos" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>
@@ -112,6 +116,7 @@
                               <th class="tw-15">Name</th>
                               <th class="tw-25">Description</th>
                               <th class="tw-15">Video</th>
+                              <th>Tags</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th class="tw-15">Action</th>

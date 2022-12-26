@@ -74,15 +74,15 @@
                               <td>June 29, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col mb-1">
                                        <a href="./edit-subscription.php">
                                        <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
                                        </a>
                                     </div>
-                                    <div class="col-md-6">
-                                       <a href="./delete-subscription.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Records" data-name="Sample Record" data-model="Records" data-c-model="" data-return-ct="Admin" data-return-ac="manage-records" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>

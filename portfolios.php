@@ -67,7 +67,7 @@
               <li><a class="dropdown-item" href="#">Delete</a></li>
             </ul>
           </div>
-          <a href="./add-portfolio" class="float-right">
+          <a href="./add-portfolio.php" class="float-right">
             <button type="button" class="btn btn-outline-primary">
               <i class="fas fa-plus"></i> Add Portfolio
             </button>
@@ -116,20 +116,20 @@
             <td class="d-none d-xl-table-cell">March 30, 2021</td>
             <td>
             <div class="row">
-              <div class="col-md-4">
-                <a href="./edit-user.php">
-                  <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+              <div class="col mb-1">
+                <a href="./add-portfolio.php">
+                  <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                 </a>
               </div>
-              <div class="col-md-4">
-                <a href="./user-details.php">
-                  <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i> Details</button>
+               <div class="col mb-1">
+                <a href="./portfolio-details.php">
+                  <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i></button>
                 </a>
               </div>
-              <div class="col-md-4">
-                <a href="./delete-user.php">
-                  <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                </a>
+              <div class="col mb-1">
+                  <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Record" data-name="Sample Record" data-model="Records" data-c-model="" data-return-ct="Admin" data-return-ac="manage-record" data-return-id="">
+                  <i class="fa fa-trash"></i>
+                  </button>
               </div>
             </div>
             </td>

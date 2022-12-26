@@ -136,7 +136,7 @@
                                        <label class="custom-file-label" for="FeaturedImage">Choose file</label>
                                     </div>
                                     <div class="mb-3 col-12">
-                                       <img src="https://via.placeholder.com/350x175" class="rounded border border-light ml-1" height="175" id="post-preview" alt="Image Preview">
+                                       <img src="https://via.placeholder.com/350x175" class="rounded img-fluid border border-light ml-1" height="175" id="post-preview" alt="Image Preview">
                                        <textarea class="form-control mt-1 w-100" name="ImageCaption" id="ImageCaption" placeholder="Caption..." rows="1"></textarea>
                                     </div>
                                  </div>

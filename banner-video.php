@@ -83,9 +83,9 @@
                               <td>June 29, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-12">
-                                       <a href="./edit-post.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col">
+                                       <a href="edit-banner-video.php">
+                                          <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
                                  </div>

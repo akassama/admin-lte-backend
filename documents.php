@@ -49,12 +49,7 @@
                      </div>
                   </div>
                   <div class="card-body">
-                    <a href="./manage-doc-groups" class="float-left mb-2">
-                        <button type="button" class="btn btn-outline-primary">
-                        <i class="fas fa-plus"></i> Manage Groups
-                        </button>
-                     </a>
-                     <a href="./add-document" class="float-right mb-2">
+                     <a href="./add-document.php" class="float-right mb-2">
                         <button type="button" class="btn btn-outline-primary">
                         <i class="fas fa-plus"></i> Add Document
                         </button>
@@ -64,9 +59,9 @@
                            <tr>
                               <th>#</th>
                               <th>Name</th>
-                              <th>Group</th>
                               <th>Type</th>
                               <th>Document</th>
+                              <th>Tags</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th>Action</th>
@@ -77,16 +72,15 @@
                               <td>1</td>
                               <td>Don Quixote</td>
                               <td>
-                                 Novel
-                              </td>
-                              <td>
                                  <i class="bi bi-file-pdf-fill text-danger"></i>
                               </td>
                               <td>
                                  <a href="#" class="btn btn-primary">
                                  <i class="fas fa-download"></i>
-                                 Download
                                  </a>
+                              </td>
+                              <td>
+                                 <span class="badge bg-info mr-1">Novel</span>
                               </td>
                               <td>
                                  <button class="btn btn-success"><i class="fas fa-check"></i> Published</button>
@@ -94,15 +88,15 @@
                               <td>June 29, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <a href="./edit-post.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-document.php">
+                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-6">
-                                       <a href="./delete-post.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Documents" data-name="Sample Documents" data-model="Documentss" data-c-model="" data-return-ct="Admin" data-return-ac="manage-documents" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>
@@ -111,16 +105,15 @@
                               <td>2</td>
                               <td>2021 Economy Report</td>
                               <td>
-                                 Reports
-                              </td>
-                              <td>
                                  <i class="bi bi-file-earmark-excel-fill text-success"></i>
                               </td>
                               <td>
                                  <a href="#" class="btn btn-primary">
                                  <i class="fas fa-download"></i>
-                                 Download
                                  </a>
+                              </td>
+                              <td>
+                                 <span class="badge bg-info mr-1">Reports</span>
                               </td>
                               <td>
                                  <button class="btn btn-danger"><i class="fas fa-times"></i> Unpublished</button>
@@ -128,15 +121,15 @@
                               <td>June 29, 2021</td>
                               <td>
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <a href="./edit-post.php">
-                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                    <div class="col mb-1">
+                                       <a href="./add-document.php">
+                                       <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                                        </a>
                                     </div>
-                                    <div class="col-md-6">
-                                       <a href="./delete-post.php">
-                                       <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i> Delete</button>
-                                       </a>
+                                    <div class="col mb-1">
+                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Documents" data-name="Sample Documents" data-model="Documentss" data-c-model="" data-return-ct="Admin" data-return-ac="manage-documents" data-return-id="">
+                                       <i class="fa fa-trash"></i>
+                                       </button>
                                     </div>
                                  </div>
                               </td>
@@ -146,9 +139,9 @@
                            <tr>
                               <th>#</th>
                               <th>Name</th>
-                              <th>Group</th>
                               <th>Type</th>
                               <th>Document</th>
+                              <th>Tags</th>
                               <th>Status</th>
                               <th>Created At</th>
                               <th>Action</th>

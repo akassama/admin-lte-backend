@@ -101,12 +101,12 @@
             <td>
               <div class="row">
                 <div class="col mb-1">
-                  <a href="./edit-post.php">
+                  <a href="./add-user.php">
                     <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i></button>
                   </a>
                 </div>
                 <div class="col mb-1">
-                  <a href="./post-details.php">
+                  <a href="./user-details.php">
                     <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i></button>
                   </a>
                 </div>
