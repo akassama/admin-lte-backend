@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Embed</h1>
+                        <h1>Add Portfolio</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="embed.php">Embeds</a></li>
-                           <li class="breadcrumb-item active">Add Embed</li>
+                           <li class="breadcrumb-item"><a href="portfolios.php">Portfolios</a></li>
+                           <li class="breadcrumb-item active">Add Portfolio</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Embed</h3>
+                     <h3 class="card-title">Add Portfolio</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -61,16 +61,27 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6">
-                                 <label for="EmbedTitle">Title</label>
-                                 <input type="text" name="EmbedTitle" class="form-control" id="EmbedTitle" required>
+                                 <label for="Title">Title</label>
+                                 <input type="text" name="Title" class="form-control" id="Name" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Link">Embed URL</label>
-                                 <input type="url" name="Link" class="form-control" id="Link" required>
+                                 <label for="Description">Description</label>
+                                 <textarea name="Description" class="form-control" rows="1" id="Description" maxlength="250" required></textarea>
+                              </div>
+                              <div class="form-group mb-2 col-12">
+                                 <div class="input-field">
+                                    <label class="active">Portfolio Images</label>
+                                    <div class="upload-images" style="padding-top: .5rem;"></div>
+                                 </div>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Shortcode">Shortcode</label>
-                                 <input type="text" name="Shortcode" class="form-control" id="Shortcode" required>
+                                 <label for="Order">Order</label>
+                                 <select class="form-control" aria-label="Select order" id="Order" name="Order">
+											  <option value="" selected>Select order</option>
+											  <option value="1">1</option>
+											  <option value="2">2</option>
+											  <option value="3">3</option>
+											</select>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>

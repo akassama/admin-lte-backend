@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Embed</h1>
+                        <h1>Add FAQ</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="embed.php">Embeds</a></li>
-                           <li class="breadcrumb-item active">Add Embed</li>
+                           <li class="breadcrumb-item"><a href="faq.php">Manage FAQs</a></li>
+                           <li class="breadcrumb-item active">Add FAQ</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Embed</h3>
+                     <h3 class="card-title">Add FAQ</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -60,17 +60,22 @@
                               </div>
                            </div>
                            <div class="row">
-                              <div class="form-group col-md-6">
-                                 <label for="EmbedTitle">Title</label>
-                                 <input type="text" name="EmbedTitle" class="form-control" id="EmbedTitle" required>
+                              <div class="form-group col-md-12">
+                                 <label for="Question">Question</label>
+                                 <input type="text" name="Question" class="form-control" id="Question" required>
                               </div>
+                              <div class="form-group col-md-12 mb-4">
+                                    <label for="Answer">Answer</label>
+                                    <textarea class="text-editor" id="Answer" name="Answer" required></textarea>
+                                 </div>
                               <div class="form-group col-md-6">
-                                 <label for="Link">Embed URL</label>
-                                 <input type="url" name="Link" class="form-control" id="Link" required>
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="Shortcode">Shortcode</label>
-                                 <input type="text" name="Shortcode" class="form-control" id="Shortcode" required>
+                                 <label for="Order">Order</label>
+                                 <select class="form-control" aria-label="Select order" id="Order" name="Order">
+											  <option value="" selected>Select order</option>
+											  <option value="1">1</option>
+											  <option value="2">2</option>
+											  <option value="3">3</option>
+											</select>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>

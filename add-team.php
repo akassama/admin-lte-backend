@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Embed</h1>
+                        <h1>Add Team</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="embed.php">Embeds</a></li>
-                           <li class="breadcrumb-item active">Add Embed</li>
+                           <li class="breadcrumb-item"><a href="team.php">Teams</a></li>
+                           <li class="breadcrumb-item active">Add Team</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Embed</h3>
+                     <h3 class="card-title">Add Team</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -61,16 +61,20 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6">
-                                 <label for="EmbedTitle">Title</label>
-                                 <input type="text" name="EmbedTitle" class="form-control" id="EmbedTitle" required>
+                                 <label for="Name">Name</label>
+                                 <input type="text" name="Name" class="form-control" id="Name" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Link">Embed URL</label>
-                                 <input type="url" name="Link" class="form-control" id="Link" required>
+                                 <label for="Title">Title</label>
+                                 <input type="text" name="Title" class="form-control" id="Title" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Shortcode">Shortcode</label>
-                                 <input type="text" name="Shortcode" class="form-control" id="Shortcode" required>
+                                 <label for="Image">Image <small>(suported formats: jpg, jpeg, png, gif)</small></label> 
+                                 <input type="file" name="Image" class="form-control accept-imgs" id="Image">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Link">Link</label>
+                                 <input type="text" name="Link" class="form-control" id="Link">
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>

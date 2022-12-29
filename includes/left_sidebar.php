@@ -356,11 +356,17 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./account.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Account</p>
-                </a>
+                <li class="nav-item">
+                  <a href="./users.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Users</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./account.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Account</p>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a href="./change-password.php" class="nav-link">
@@ -381,9 +387,9 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./subcriptions.php" class="nav-link">
+                  <a href="./subscriptions.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Subcriptions</p>
+                    <p>Subscriptions </p>
                   </a>
                 </li>
             </ul>

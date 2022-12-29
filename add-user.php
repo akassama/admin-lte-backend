@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Embed</h1>
+                        <h1>Add User</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="embed.php">Embeds</a></li>
-                           <li class="breadcrumb-item active">Add Embed</li>
+                           <li class="breadcrumb-item"><a href="users.php">Users</a></li>
+                           <li class="breadcrumb-item active">Add User</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Embed</h3>
+                     <h3 class="card-title">Add User</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -61,16 +61,29 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6">
-                                 <label for="EmbedTitle">Title</label>
-                                 <input type="text" name="EmbedTitle" class="form-control" id="EmbedTitle" required>
+                                 <label for="FirstName">First Name</label>
+                                 <input type="text" name="FirstName" class="form-control" id="FirstName" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Link">Embed URL</label>
-                                 <input type="url" name="Link" class="form-control" id="Link" required>
+                                 <label for="LastName">Last Name</label>
+                                 <input type="text" name="LastName" class="form-control" id="LastName" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Shortcode">Shortcode</label>
-                                 <input type="text" name="Shortcode" class="form-control" id="Shortcode" required>
+                                 <label for="Image">Image <small>(suported formats: jpg, jpeg, png, gif)</small></label> 
+                                 <input type="file" name="Image" class="form-control accept-imgs" id="Image">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Email">Email</label>
+                                 <input type="email" name="Email" class="form-control" id="Email" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Role">Role</label>
+                                 <select class="form-control" aria-label="Select Role" id="Role" name="Role">
+											  <option value="" selected>Select order</option>
+											  <option value="Admin">Admin</option>
+											  <option value="Editor">Editor</option>
+											  <option value="Author">Author</option>
+											</select>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>

@@ -21,12 +21,12 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Top Navigation</h1>
+                        <h1>Subscriptions</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item active">Top Navigation</li>
+                           <li class="breadcrumb-item active">Subscriptions</li>
                         </ol>
                      </div>
                   </div>
@@ -38,7 +38,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Manage Top Navigation</h3>
+                     <h3 class="card-title">Manage Subscriptions</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -50,6 +50,11 @@
                   </div>
                   <div class="card-body">
                      <table id="example1" class="table table-bordered table-striped dataTable">
+                        <a href="./add-subscription.php" class="float-right mb-2">
+                           <button type="button" class="btn btn-outline-primary">
+                           <i class="fas fa-plus"></i> Add Subscription
+                           </button>
+                        </a>
                         <thead>
                            <tr>
                               <th>#</th>
@@ -75,7 +80,7 @@
                               <td>
                                  <div class="row">
                                     <div class="col mb-1">
-                                       <a href="./edit-subscription.php">
+                                       <a href="./add-subscription.php">
                                        <button type="button" class="btn btn-outline-success btn-block"><i class="fas fa-pencil-alt"></i> Edit</button>
                                        </a>
                                     </div>

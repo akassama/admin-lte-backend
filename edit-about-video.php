@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Embed</h1>
+                        <h1>Edit Video</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="embed.php">Embeds</a></li>
-                           <li class="breadcrumb-item active">Add Embed</li>
+                           <li class="breadcrumb-item"><a href="about-video.php">About Us Video</a></li>
+                           <li class="breadcrumb-item active">Edit Video</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Embed</h3>
+                     <h3 class="card-title">Edit Video</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -61,16 +61,16 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6">
-                                 <label for="EmbedTitle">Title</label>
-                                 <input type="text" name="EmbedTitle" class="form-control" id="EmbedTitle" required>
+                                 <label for="VideoTitle">Video Title</label>
+                                 <input type="text" name="VideoTitle" class="form-control" id="VideoTitle" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Link">Embed URL</label>
+                                 <label for="SubText">Sub-Text (Description)</label>
+                                 <textarea name="SubText" class="form-control" rows="1" id="SubText" maxlength="250" required></textarea>
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="Link">Video Link <small>(suported urls: YouTube, Vimeo, Facebook)</small></label>
                                  <input type="url" name="Link" class="form-control" id="Link" required>
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="Shortcode">Shortcode</label>
-                                 <input type="text" name="Shortcode" class="form-control" id="Shortcode" required>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>

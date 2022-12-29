@@ -1,16 +1,14 @@
 Pages:
-*add-user.php
-*user-details.php
-*add-team.php
-*team-member-details.php
-*add-subscription.php
-*add-portfolio.php?
-*portfolio-details.php?
-*add-partner.php
-*add-section.php
-*section-details.php
-*add-language.php
-*slider-details.php
-*add-faq.php
-*faq-details.php
-*edit-about-video.php
+*add-user.php ✔
+*user-details.php ✔
+*add-team.php ✔
+*add-subscription.php ✔
+*add-portfolio.php ✔
+*portfolio-details.php ✔
+*add-partner.php ✔
+*add-section.php ✔
+*section-details.php ✔
+*add-language.php ✔
+*add-faq.php ✔
+*faq-details.php ✔
+*edit-about-video.php ✔

@@ -35,144 +35,21 @@
             </section>
             <!-- Main content -->
             <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-
-            <!-- Profile Image -->
-            <div class="card card-primary card-outline">
-              <div class="card-body box-profile">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
-                       src="dist/img/user2-160x160.jpg"
-                       alt="User profile picture">
-                </div>
-
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-                <p class="text-muted text-center">Software Engineer</p>
-
-                <ul class="list-group list-group-unbordered mb-3">
-                  <li class="list-group-item">
-                    <b>Blogs</b> <a class="float-right">22</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Email</b> <a class="float-right">akassama@yahoo.com</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Roles</b> 
-                    <span class="float-right">
-                        <a href="#" class="badge bg-primary mr-1 my-1">Admin</a>
-                        <a href="#" class="badge bg-primary mr-1 my-1">Editor</a>
-                        <a href="#" class="badge bg-primary mr-1 my-1"> Author</a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
-            <!-- About Me Box -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">About Me</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Biography</strong>
-
-                <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
-                </p>
-
-                <hr>
-
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                <p class="text-muted">Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fas fa-user-alt mr-1"></i> Gender</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">Male</span>
-                </p>
-
-                <hr>
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-          <div class="col-md-9">
-            <div class="card">
-              <div class="card-header p-2">
-                <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#passwords" data-toggle="tab">Password</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
-                </ul>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="tab-content">
-                  <div class="active tab-pane" id="activity">
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="dist/img/user2-160x160.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                        </span>
-                        <span class="description">7:30 PM today</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Logged in from PC.
-                      </p>
-                    </div>
-                    <!-- /.post -->
+               <!-- Default box -->
+               <div class="card">
+                  <div class="card-header">
+                     <h3 class="card-title">Manage Account Info</h3>
+                     <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                        </button>
+                     </div>
                   </div>
-
-                  <div class="tab-pane" id="passwords">
-                     <form class="form-horizontal validate-form" method="post" action="#" id="quickForm" autocomplete="off">
-                        <div class="form-group row">
-                           <div class="offset-sm-2 col-sm-10">
-                              <button type="submit" class="btn btn-danger float-right">
-                              <i class="fas fa-save"></i> Save
-                           </button>
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label for="CurrentPassword" class="col-sm-2 col-form-label">Current Password</label>
-                           <div class="col-sm-10">
-                              <input type="password" class="form-control" id="CurrentPassword" placeholder="Current Password" required>
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label for="NewPassword" class="col-sm-2 col-form-label">New Password</label>
-                           <div class="col-sm-10">
-                              <input type="password" class="form-control" id="NewPassword" placeholder="New Password" required>
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label for="RepeatPassword" class="col-sm-2 col-form-label">Repeat Password</label>
-                           <div class="col-sm-10">
-                              <input type="password" class="form-control" id="RepeatPassword" placeholder="RepeatPassword" required>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-
-                  <div class="tab-pane" id="settings">
-                  <form class="validate-form" method="post" action="#" id="quickForm" autocomplete="off">
+                  <div class="card-body">
+                     <form class="validate-form" method="post" action="#" id="quickForm" autocomplete="off">
                         <div class="card-body">
                            <div class="row">
                               <div class="col-12">
@@ -242,18 +119,10 @@
                         </div>
                      </form>
                   </div>
-                  <!-- /.tab-pane -->
-                </div>
-                <!-- /.tab-content -->
-              </div><!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+                  <!-- /.card-body -->
+               </div>
+               <!-- /.card -->
+            </section>
             <!-- /.content -->
          </div>
          <!-- /.content-wrapper -->

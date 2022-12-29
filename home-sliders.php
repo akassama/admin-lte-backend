@@ -62,6 +62,7 @@
                               <th>Title</th>
                               <th class="tw-15">Sub Text</th>
                               <th class="tw-15">Link</th>
+                              <th>Order</th>
                               <th>Created At</th>
                               <th>Action</th>
                            </tr>
@@ -85,6 +86,9 @@
                                     <i class="fas fa-copy"></i> 
                                     </button>
                                  </div>
+                              </td>
+                              <td>
+                                 2
                               </td>
                               <td class="d-none d-xl-table-cell">March 30, 2021</td>
                               <td>
@@ -115,6 +119,7 @@
                               <th>Title</th>
                               <th class="tw-15">Sub Text</th>
                               <th class="tw-15">Link</th>
+                              <th>Order</th>
                               <th>Created At</th>
                               <th>Action</th>
                            </tr>

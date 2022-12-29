@@ -99,11 +99,6 @@
                                        </a>
                                     </div>
                                     <div class="col mb-1">
-                                       <a href="./team-member-details.php">
-                                       <button type="button" class="btn btn-outline-info btn-block"><i class="fas fa-eye"></i></button>
-                                       </a>
-                                    </div>
-                                    <div class="col mb-1">
                                        <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Record" data-name="Sample Record" data-model="Records" data-c-model="" data-return-ct="Admin" data-return-ac="manage-record" data-return-id="">
                                        <i class="fa fa-trash"></i>
                                        </button>
