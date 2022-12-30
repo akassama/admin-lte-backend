@@ -1,5 +1,4 @@
 
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -8,8 +7,6 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
-<!-- app script js -->
-<script src="dist/js/app.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Bootstrap 5 -->
@@ -70,136 +67,18 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard2.js"></script>
 
-<script>
-  // jquery form validation 
-  $(".validate-form").validate({
-    errorClass: 'is-invalid text-danger',
-    successClass: 'is-valid', 
-    errorsWrapper: '<span class="form-text text-danger"></span>',
-    errorTemplate: '<span></span>',
-    trigger: 'change'
-  });
+<!-- script js -->
+<script src="dist/js/script.js"></script>
 
-  $(function () {
-    // Summernote
-    $('.text-editor').summernote({
-      placeholder: 'Type here',
-      height: 200
-    });
-  })
-
-  $( document ).ready(function() {
-  ///////////////////////////
-  //////Set codemirror///////
-  ///////////////////////////
-  function qsa(sel) {
-    return Array.apply(null, document.querySelectorAll(sel));
-  }
-  qsa(".code-editor").forEach(function (editorEl) {
-    CodeMirror.fromTextArea(editorEl, {
-      lineNumbers: true,
-      styleActiveLine: true,
-      matchBrackets: true,
-      theme: 'dracula',
-    });
-  });
-});
-
-
-//Calling document ready
-$( document ).ready(function() {
-    ///////////////////////////
-    ///////Set tags input//////
-    ///////////////////////////
-    $(function() {
-      $('.tags-input').tagsInput({width:'auto'});
-    });
-
-
-    ///////////////////////////
-    ////Set image uploader/////
-    ///////////////////////////
-    $('.upload-images').imageUploader();
-
-
-    ///////////////////////////
-    ////Set datepicker/////
-    ///////////////////////////
-    $('.datepicker').datepicker({
-		format: 'mm/dd/yyyy',
-		clearBtn: true,
-		todayHighlight: true
-	});
-
-  // Add the following code if you want the name of the file appear on select
-  $(".custom-file-input").on("change", function() {
-    var fileName = $(this).val().split("\\").pop();
-    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-  });
-  
-  ///////////////////////////
-  //////Checks if string is empty//////
-  ///////////////////////////
-  function isEmpty(str) {
-    return (!str || str.length === 0);
-  }
-
-});
-</script>
-
+<!-- vue js -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="dist/js/vue-app.js"></script>
 
 <script>
-///////////////////////
-//Delete action lodal//
-///////////////////////
-$( document ).ready(function() {
-  /**
-* delete record click
-*
-*/
 
-$('.delete-button').on('click', function (e) {
-    //get clicked element key/id
-    var deleteId = $(this).data("id");
-    var deleteGroup = $(this).data('group');
-    var deleteName = $(this).data('name');
-    var deleteModel = $(this).data('model');
-    var deleteChildModel = $(this).data('c-model');
-    var returnController = $(this).data('return-ct');
-    var returnAction = $(this).data('return-ac');
-    var returnId = $(this).data('return-id');
-
-    //check if main inputs are empty
-    if (isEmpty(deleteModel) || isEmpty(deleteId)) {
-      alert("missng required data values");
-      return false;
-    }
-    
-    //set hidden values
-    $(".del-modal-id").val(deleteId);
-    $(".del-modal-group").val(deleteGroup);
-    $(".del-modal-name").val(deleteName);
-    $(".delete-item-name").text(deleteGroup);
-    $(".del-modal-model").val(deleteModel);
-    $(".del-modal-c-model").val(deleteChildModel);
-    $(".del-modal-return-ct").val(returnController);
-    $(".del-modal-return-ac").val(returnAction);
-    $(".del-modal-return-id").val(returnId);
-
-    //show modal
-    $('#daleteActionModal').modal('show');
-  });
-});
-
-///////////////////////////
-//////Checks if empty//////
-///////////////////////////
-function isEmpty(str) {
-	return (!str || str.length === 0);
-}
 </script>
 
 
 
-  <!--// include modals -->
-  <?php include 'includes/modals.php'; ?>
+<!--// include modals -->
+<?php include 'includes/modals.php'; ?>

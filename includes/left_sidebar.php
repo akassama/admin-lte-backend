@@ -37,7 +37,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="./index.php" class="nav-link">
+            <a href="./index.php" class="nav-link set-active-dashboard">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Dashboard
@@ -45,7 +45,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-navigation">
               <i class="nav-icon fas fa-list"></i>
               <p>
               Navigation
@@ -54,13 +54,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="./top-nav.php" class="nav-link">
+              <a href="./top-nav.php" class="nav-link set-active-top-navigation">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Top Navigation</p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./top-nav.php" class="nav-link">
+              <a href="./top-nav.php" class="nav-link set-active-footer-navigation">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Footer Navigation</p>
               </a>
@@ -68,7 +68,7 @@
             </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link set-active-blog">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                 Blog
@@ -77,13 +77,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="./posts.php" class="nav-link">
+                <a href="./posts.php" class="nav-link set-active-posts">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Posts</p>
                 </a>
                 </li>
                 <li class="nav-item">
-                <a href="./categories.php" class="nav-link">
+                <a href="./categories.php" class="nav-link set-active-categories">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categories</p>
                 </a>
@@ -91,7 +91,7 @@
               </ul>
             </li>
           <li class="nav-item">
-            <a href="./pages.php" class="nav-link">
+            <a href="./pages.php" class="nav-link set-active-pages">
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Pages
@@ -99,7 +99,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-general-pages">
               <i class="nav-icon fas fa-file"></i>
               <p>
               General Pages
@@ -108,37 +108,37 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./videos.php" class="nav-link">
+                <a href="./videos.php" class="nav-link set-active-videos">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Videos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./gallery.php" class="nav-link">
+                <a href="./gallery.php" class="nav-link set-active-gallery">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Gallery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./documents.php" class="nav-link">
+                <a href="./documents.php" class="nav-link set-active-documents">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Documents</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./embed.php" class="nav-link">
+                <a href="./embed.php" class="nav-link set-active-embed">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Embed</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./privacy.php" class="nav-link">
+                <a href="./privacy.php" class="nav-link set-active-privacy-policy">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Privacy Policy</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./terms.php" class="nav-link">
+                <a href="./terms.php" class="nav-link set-active-terms-condition">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Terms & Conditions</p>
                 </a>
@@ -146,7 +146,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-sections">
               <i class="nav-icon fas fa-stream"></i>
               <p>
               Sections
@@ -155,87 +155,87 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="./home-sliders.php" class="nav-link">
+              <a href="./home-sliders.php" class="nav-link set-active-sliders">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Sliders</p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./banner-video.php" class="nav-link">
+              <a href="./banner-video.php" class="nav-link set-active-banner-video">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Banner Video</p>
               </a>
               </li>
               <li class="nav-item">
-                <a href="./about-summary.php" class="nav-link">
+                <a href="./about-summary.php" class="nav-link set-active-about-summary">
                 <i class="far fa-circle nav-icon"></i>
                 <p>About Summary</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./about-video.php" class="nav-link">
+                <a href="./about-video.php" class="nav-link set-active-about-video">
                 <i class="far fa-circle nav-icon"></i>
                 <p>About Video</p>
                 </a>
               </li>
               <li class="nav-item">
-              <a href="./counters.php" class="nav-link">
+              <a href="./counters.php" class="nav-link set-active-counters">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Counters
                 </p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./services.php" class="nav-link">
+              <a href="./services.php" class="nav-link set-active-services">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Services</p>
               </a>
               </li>
               <li class="nav-item">
-                <a href="./testimonials.php" class="nav-link">
+                <a href="./testimonials.php" class="nav-link set-active-testimonials">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Testimonials
                 </p>
                 </a>
                 </li>
               <li class="nav-item">
-              <a href="./portfolios.php" class="nav-link">
+              <a href="./portfolios.php" class="nav-link set-active-portfolios">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Portfolios</p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./team.php" class="nav-link">
+              <a href="./team.php" class="nav-link set-active-team">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Team</p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./faq.php" class="nav-link">
+              <a href="./faq.php" class="nav-link set-active-faq">
                 <i class="far fa-circle nav-icon"></i>
                 <p>FAQs</p>
               </a>
               </li>
               <li class="nav-item">
-              <a href="./partners.php" class="nav-link">
+              <a href="./partners.php" class="nav-link set-active-partners">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Partners</p>
               </a>
               </li>
               <li class="nav-item">
-                <a href="./other-section.php" class="nav-link">
+                <a href="./other-section.php" class="nav-link set-active-other-sections">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Other Sections</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./section-display.php" class="nav-link">
+                <a href="./section-display.php" class="nav-link set-active-section-display">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Section Display</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./section-orders.php" class="nav-link">
+                <a href="./section-orders.php" class="nav-link set-active-section-orders">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Section Order</p>
                 </a>
@@ -243,7 +243,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-site-settings">
               <i class="nav-icon fas fa-sliders-h"></i>
               <p>
               Site Settings
@@ -252,19 +252,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./general-info.php" class="nav-link">
+                <a href="./general-info.php" class="nav-link set-active-general-info">
                 <i class="far fa-circle nav-icon"></i>
                 <p>General Info</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./social-info.php" class="nav-link">
+                <a href="./social-info.php" class="nav-link set-active-social-info">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Social Info</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./seo-settings.php" class="nav-link">
+                <a href="./seo-settings.php" class="nav-link set-active-seo-settings">
                 <i class="far fa-circle nav-icon"></i>
                 <p>SEO Settings</p>
                 </a>
@@ -272,7 +272,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-coding">
               <i class="nav-icon fas fa-code"></i>
               <p>
               Coding
@@ -281,13 +281,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./scripts.php" class="nav-link">
+                <a href="./scripts.php" class="nav-link set-active-scripts">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Scripts</p>
                 </a>
                 </li>
                 <li class="nav-item">
-                <a href="./css.php" class="nav-link">
+                <a href="./css.php" class="nav-link set-active-css">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CSS</p>
                 </a>
@@ -295,7 +295,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-configuration">
               <i class="nav-icon fas fa-tools"></i>
               <p>
               Configuration
@@ -304,43 +304,43 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./google-settings.php" class="nav-link">
+                <a href="./google-settings.php" class="nav-link set-active-google-settings">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Google Settings</p>
                 </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./facebook-comments.php" class="nav-link">
+                  <a href="./facebook-comments.php" class="nav-link set-active-facebook-comments">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Facebook Comments</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./twitter-feed.php" class="nav-link">
+                  <a href="./twitter-feed.php" class="nav-link set-active-twitter-feed">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Twitter Feed</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./email-config.php" class="nav-link">
+                  <a href="./email-config.php" class="nav-link set-active-email-config">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Email Config</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./cookie-concent.php" class="nav-link">
+                  <a href="./cookie-concent.php" class="nav-link set-active-cookie-concent">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Cookie Concent</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./share-this.php" class="nav-link">
+                  <a href="./share-this.php" class="nav-link set-active-share-this">
                     <i class="far fa-circle nav-icon"></i>
                     <p>ShareThis Settings</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./languages.php" class="nav-link">
+                  <a href="./languages.php" class="nav-link set-active-languages">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Languages</p>
                   </a>
@@ -348,7 +348,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link set-active-settings">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
               Settings
@@ -357,37 +357,37 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./users.php" class="nav-link">
+                  <a href="./users.php" class="nav-link set-active-users">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Users</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./account.php" class="nav-link">
+                  <a href="./account.php" class="nav-link set-active-account">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Account</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./change-password.php" class="nav-link">
+                  <a href="./change-password.php" class="nav-link set-active-change-password">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Password</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./theme.php" class="nav-link">
+                  <a href="./theme.php" class="nav-link set-active-theme">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Theme Settings</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./activity-logs.php" class="nav-link">
+                  <a href="./activity-logs.php" class="nav-link set-active-activity-logs">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Activity Logs</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./subscriptions.php" class="nav-link">
+                  <a href="./subscriptions.php" class="nav-link set-active-subscriptions">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Subscriptions </p>
                   </a>
@@ -395,7 +395,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="./tests.php" class="nav-link">
+            <a href="./tests.php" class="nav-link set-active">
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Test
