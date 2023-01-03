@@ -37,7 +37,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="./index.php" class="nav-link set-active-dashboard">
+            <a href="./index.php" class="nav-link t-dashboard">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
               Dashboard
@@ -45,7 +45,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link set-active-navigation">
+            <a href="#" class="nav-link t-navigation">
               <i class="nav-icon fas fa-list"></i>
               <p>
               Navigation
@@ -54,7 +54,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="./top-nav.php" class="nav-link set-active-top-navigation">
+              <a href="./top-nav.php" class="nav-link t-navigation">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Top Navigation</p>
               </a>
@@ -226,6 +226,12 @@
                 <a href="./other-section.php" class="nav-link set-active-other-sections">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Other Sections</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./content-data.php" class="nav-link set-active-other-sections">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Content Data</p>
                 </a>
               </li>
               <li class="nav-item">

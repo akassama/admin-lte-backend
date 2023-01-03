@@ -102,16 +102,16 @@
                                  </div>
                               </div>
                               <div class="col-md-8">
-                                 <label for="Logo">Logo</label>
+                              <label for="Logo">Logo <small>(suported formats: jpg, jpeg, png, gif)</small></label>
                                  <div class="custom-file">
-                                    <input type="file" name="Logo" class="custom-file-input" id="Logo">
+                                    <input type="file" name="Logo" class="custom-file-input accept-imgs" id="Logo">
                                     <label class="custom-file-label" for="Logo">Choose file</label>
                                  </div>
                               </div>
                               <div class="col-md-4">
-                                 <label for="Favicon">Favicon</label>
+                                 <label for="Logo">Favicon <small>(suported formats: jpg, jpeg, png, gif)</small></label>
                                  <div class="custom-file">
-                                    <input type="file" name="Favicon" class="custom-file-input" id="Favicon">
+                                    <input type="file" name="Favicon" class="custom-file-input accept-imgs" id="Favicon">
                                     <label class="custom-file-label" for="Favicon">Choose file</label>
                                  </div>
                               </div>

@@ -117,7 +117,7 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
                   <li class="nav-item"><a class="nav-link" href="#passwords" data-toggle="tab">Password</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#account-details" data-toggle="tab">Account Details</a></li>
                 </ul>
               </div>
               <!-- /.card-header -->
@@ -171,7 +171,7 @@
                      </form>
                   </div>
 
-                  <div class="tab-pane" id="settings">
+                  <div class="tab-pane" id="account-details">
                   <form class="validate-form" method="post" action="#" id="quickForm" autocomplete="off">
                         <div class="card-body">
                            <div class="row">

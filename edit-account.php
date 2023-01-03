@@ -60,9 +60,9 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-12">
-                                 <label for="ProfilePicture">Profile Picture</label>
+                                 <label for="ProfilePicture">Profile Picture <small>(suported formats: jpg, jpeg, png, gif)</small></label>
                                  <div class="custom-file">
-                                    <input type="file" name="ProfilePicture" class="custom-file-input" id="ProfilePicture">
+                                    <input type="file" name="ProfilePicture" class="custom-file-input accept-imgs" id="ProfilePicture">
                                     <label class="custom-file-label" for="ProfilePicture">Choose file</label>
                                  </div>
                               </div>

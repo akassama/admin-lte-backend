@@ -73,8 +73,11 @@
                                  <input type="text" name="Organization" class="form-control" id="Organization">
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Image">Image <small>(suported formats: jpg, jpeg, png, gif)</small></label>
-                                 <input type="file" name="Image" class="form-control accept-imgs" id="Image">
+                                 <label for="Logo">Image <small>(suported formats: jpg, jpeg, png, gif)</small></label>
+                                 <div class="custom-file">
+                                    <input type="file" name="Image" class="custom-file-input accept-imgs" id="Image">
+                                    <label class="custom-file-label" for="Image">Choose file</label>
+                                 </div>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Testimonial">Testimonial</label>

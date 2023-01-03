@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>AdminLTE 3 | Dashboard</title>
+      <!-- <page-tab>t-dashboard</page-tab> -->
       <!--// include header resouces -->
       <?php include 'includes/header_resources.php';?>
    </head>

@@ -157,12 +157,16 @@ if ($(".preview-input")[0]){
     };
 }
 
-//set active nav-bar
-$('.set-active*').click(function(){
-  //set clicked na link as active
-  $(this).addClass(" active");
+///////////////////////////
+////set active nav-bar/////
+///////////////////////////
+$( document ).ready(function() {
+  var page_tab = $("page-tab").text();
+  //if dashboard
+  if(page_tab != ''){ 
+    $("."+page_tab).addClass(" active");
+  }
 });
-
 
 ///////////////////////////
 //////Checks if empty//////

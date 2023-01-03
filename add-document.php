@@ -70,7 +70,10 @@
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="DocumentFile">Document File <small>(suported formats: pdf, doc(x), xls(x), csv, ppt(x))</small></label>
-                                 <input type="file" name="DocumentFile" class="form-control accept-docs" id="DocumentFile" required>
+                                 <div class="custom-file">
+                                    <input type="file" name="Favicon" class="custom-file-input accept-docs" id="Favicon">
+                                    <label class="custom-file-label" for="Favicon">Choose file</label>
+                                 </div>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Order">Order</label>

@@ -69,8 +69,11 @@
                                  <textarea name="SubText" class="form-control" rows="1" id="Description" maxlength="250" required></textarea>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Image">Slider Image <small>(suported formats: jpg, jpeg, png, gif)</small></label>
-                                 <input type="file" name="Image" class="form-control accept-imgs" id="Image" required>
+                                 <label for="Logo">Image <small>(suported formats: jpg, jpeg, png, gif)</small></label>
+                                 <div class="custom-file">
+                                    <input type="file" name="Image" class="custom-file-input accept-imgs" id="Image">
+                                    <label class="custom-file-label" for="Image">Choose file</label>
+                                 </div>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Link">Link</label>

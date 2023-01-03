@@ -21,13 +21,13 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Add Partner</h1>
+                        <h1>Add Content Data</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item"><a href="partners.php">Partners</a></li>
-                           <li class="breadcrumb-item active">Add Partner</li>
+                           <li class="breadcrumb-item"><a href="content-data.php">Content Data</a></li>
+                           <li class="breadcrumb-item active">Add Content Data</li>
                         </ol>
                      </div>
                   </div>
@@ -39,7 +39,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Add Partner</h3>
+                     <h3 class="card-title">Add Content Data</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -61,32 +61,16 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6">
-                                 <label for="Name">Name</label>
-                                 <input type="text" name="Name" class="form-control" id="Name" required>
+                                 <label for="Title">Title</label>
+                                 <input type="text" name="Title" class="form-control" id="Name" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Description">Description</label>
-                                 <textarea name="Description" class="form-control" rows="1" id="Description" maxlength="250" required></textarea>
+                                 <label for="Identifier">Identifier</label>
+                                 <input type="text" name="Identifier" class="form-control" id="Identifier" required>
                               </div>
                               <div class="form-group col-md-6">
-                                 <label for="Logo">Logo <small>(suported formats: jpg, jpeg, png, gif)</small></label>
-                                 <div class="custom-file">
-                                    <input type="file" name="Logo" class="custom-file-input accept-imgs" id="Logo">
-                                    <label class="custom-file-label" for="Logo">Choose file</label>
-                                 </div>
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="URL">URL</label>
-                                 <input type="text" name="URL" class="form-control" id="URL">
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="Order">Order</label>
-                                 <select class="form-control" aria-label="Select order" id="Order" name="Order">
-											  <option value="" selected>Select order</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											</select>
+                                 <label for="Value">Value</label>
+                                 <textarea name="Value" id="Value" rows="1" class="form-control" required></textarea>
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Status">Status</label>
