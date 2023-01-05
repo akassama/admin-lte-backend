@@ -48,3 +48,64 @@
 .tw-50{
   width: 50%;
 }
+.tw-55{
+  width: 55%;
+}
+.tw-60{
+  width: 60%;
+}
+.tw-65{
+  width: 65%;
+}
+.tw-70{
+  width: 70%;
+}
+.tw-75{
+  width: 75%;
+}
+.tw-80{
+  width: 80%;
+}
+.tw-85{
+  width: 85%;
+}
+.tw-90{
+  width: 90%;
+}
+.tw-95{
+  width: 95%;
+}
+.tw-100{
+  width: 100%;
+}
+
+
+/* vertical scrollbars */
+.v-scrollbar-100{
+  max-height: 100px;
+  overflow-y: scroll;
+}
+.v-scrollbar-150{
+  max-height: 150px;
+  overflow-y: scroll;
+}
+.v-scrollbar-200{
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.v-scrollbar-250{
+  max-height: 250px;
+  overflow-y: scroll;
+}
+.v-scrollbar-300{
+  max-height: 300;
+  overflow-y: scroll;
+}
+.v-scrollbar-350{
+  max-height: 350;
+  overflow-y: scroll;
+}
+.v-scrollbar-400{
+  max-height: 400;
+  overflow-y: scroll;
+}
