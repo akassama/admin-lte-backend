@@ -298,6 +298,12 @@
                   <p>CSS</p>
                 </a>
                 </li>
+                <li class="nav-item">
+                <a href="./htmls.php" class="nav-link set-active-css">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>HTML</p>
+                </a>
+                </li>
             </ul>
           </li>
           <li class="nav-item">

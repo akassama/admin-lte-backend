@@ -70,7 +70,7 @@
                                  <strong>Abdoulie Kassama</strong>
                               </td>
                               <td>UserLogin</td>
-                              <td>User '<a href='#'>Abdoulie Kassama</a>' logged in.</td>
+                              <td>User '<a href='user-details.php' target="_blank">Abdoulie Kassama</a>' logged in.</td>
                               <td>November 03, 2021</td>
                               <td>
                                  <div class="row">

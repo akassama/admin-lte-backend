@@ -50,6 +50,11 @@
                   </div>
                   <div class="card-body">
                      <table id="example1" class="table table-bordered table-striped dataTable">
+                        <a href="#!" class="mb-2">
+                           <button type="button" class="btn btn-outline-success">
+                           <i class="fas fa-file-excel"></i> Export Data
+                           </button>
+                        </a>
                         <a href="./add-subscription.php" class="float-right mb-2">
                            <button type="button" class="btn btn-outline-primary">
                            <i class="fas fa-plus"></i> Add Subscription

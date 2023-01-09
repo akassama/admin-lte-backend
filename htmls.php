@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>AdminLTE 3 | Notifications</title>
+      <title>AdminLTE 3 | Site HTML Markups</title>
       <!--// include header resouces -->
       <?php include 'includes/header_resources.php';?>
    </head>
@@ -21,12 +21,12 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1>Notifications</h1>
+                        <h1>HTML Markups</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                           <li class="breadcrumb-item"><a href="./">Home</a></li>
-                           <li class="breadcrumb-item active">Manage Notifications</li>
+                           <li class="breadcrumb-item"><a href="#./">Home</a></li>
+                           <li class="breadcrumb-item active">HTML Markups</li>
                         </ol>
                      </div>
                   </div>
@@ -38,7 +38,7 @@
                <!-- Default box -->
                <div class="card">
                   <div class="card-header">
-                     <h3 class="card-title">Manage Notifications</h3>
+                     <h3 class="card-title">Manage HTML Markups</h3>
                      <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -49,50 +49,29 @@
                      </div>
                   </div>
                   <div class="card-body">
-                     <table id="example1" class="table table-bordered table-striped dataTable">
-                        <thead>
-                           <tr>
-                              <th>#</th>
-                              <th>Notification</th>
-                              <th class="d-none d-xl-table-cell">Date</th>
-                              <th>Action</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>1</td>
-                              <td>
-                                 <a href="notification.php" class="text-info">
-                                    We are a non-profit organization bringing clean and safe drinking water to people in developing countries.
-                                 </a>
-                              </td>
-                              <td>June 29, 2021</td>
-                              <td>
-                                 <div class="row">
-                                    <div class="col mb-1">
-                                       <button type="button" class="btn btn-outline-danger delete-button btn-block" data-id="f2a104cad924" data-group="Record" data-name="Sample Record" data-model="Records" data-c-model="" data-return-ct="Admin" data-return-ac="manage-record" data-return-id="">
-                                       <i class="fa fa-trash"></i>
-                                       </button>
-                                    </div>
-                                 </div>
-                              </td>
-                           </tr>
-                        </tbody>
-                        <tfoot>
-                           <tr>
-                              <th>#</th>
-                              <th>Notification</th>
-                              <th class="d-none d-xl-table-cell">Created At</th>
-                              <th>Action</th>
-                           </tr>
-                        </tfoot>
-                     </table>
+                     <form class="validate-form" method="post" action="#" id="quickForm" autocomplete="off">
+                        <div class="card-body">
+                           <div class="row">
+                              <div class="col-12">
+                                 <button type="submit" class="btn btn-primary save-btn float-right">
+                                    <i class="fas fa-save"></i> Save
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="form-group mb-3 col-md-12">
+                                 <label for="TopHtml">Top (Body)</label>
+                                 <textarea class="form-control code-editor" rows="4" id="TopHtml" name="TopHtml"></textarea>
+                              </div>
+                              <div class="form-group mb-3 col-md-12">
+                                 <label for="BottomHtml">Bottom (Body)</label>
+                                 <textarea class="form-control code-editor" rows="4" id="BottomHtml" name="BottomHtml"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
                   </div>
                   <!-- /.card-body -->
-                  <div class="card-footer">
-                     Footer
-                  </div>
-                  <!-- /.card-footer-->
                </div>
                <!-- /.card -->
             </section>
