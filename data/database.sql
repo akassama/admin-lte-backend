@@ -549,7 +549,7 @@ public function up()
  */
 public function down()
 {
-    Schema::dropIfExists('client_projects');
+    Schema::dropIfExists('videos');
 }
 
 
@@ -561,29 +561,20 @@ public function down()
 //   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
 //
 
-/* php artisan make:migration create_contract_payments_table */
-/* Contract Payments */
-DROP TABLE IF EXISTS `contract_payments`;
-CREATE TABLE IF NOT EXISTS contract_payments (
+/* php artisan make:migration create_gallery_table */
+/* Gallery */
+DROP TABLE IF EXISTS `gallery`;
+CREATE TABLE IF NOT EXISTS gallery (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    payment_id VARCHAR(255) NOT NULL,
-    contract_id VARCHAR(255) NOT NULL,
-    client_id VARCHAR(255) NOT NULL,
-    project_id VARCHAR(255) DEFAULT NULL,
-    payment_amount FLOAT DEFAULT 0.0,
-    payment_unit VARCHAR(50)  DEFAULT NULL,
-    duration INT DEFAULT 0,
-    duration_unit VARCHAR(50)  DEFAULT NULL,
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
-    paid_by VARCHAR(255) DEFAULT NULL,
-    paid_date DATE DEFAULT NULL,
-    paid_bank VARCHAR(255) DEFAULT NULL,
-    send_reminder INT DEFAULT 1,
-    last_reminder DATE DEFAULT NULL,
+    gallery_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    tags VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT unique_contract_id UNIQUE (contract_id)
+    CONSTRAINT unique_gallery_id UNIQUE (gallery_id)
 )  ENGINE=INNODB;
 
 /**
@@ -593,16 +584,14 @@ CREATE TABLE IF NOT EXISTS contract_payments (
  */
 public function up()
 {
-    Schema::create('contract_payments', function (Blueprint $table) {
+    Schema::create('gallery', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('contract_id')->unique();
-        $table->string('client_id');
-        $table->float('payment_ammount')->default(0.0);
-        $table->integer('duration')->default(0);
-        $table->date('start_date');
-        $table->date('end_date');
-        $table->integer('paid_status')->default(0);
-        $table->integer('reminder_status')->default(0);
+        $table->string('gallery_id')->unique();
+        $table->string('title');
+        $table->string('description')->default(null);
+        $table->string('tags')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
         $table->timestamps();
     });
 }
@@ -614,5 +603,1054 @@ public function up()
  */
 public function down()
 {
-    Schema::dropIfExists('contract_payments');
+    Schema::dropIfExists('gallery');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_documents_table */
+/* Documents */
+DROP TABLE IF EXISTS `documents`;
+CREATE TABLE IF NOT EXISTS documents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    document_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    document_file VARCHAR(255) NOT NULL,
+    tags VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_document_id UNIQUE (document_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('documents', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('document_id')->unique();
+        $table->string('title');
+        $table->string('description')->default(null);
+        $table->string('document_file');
+        $table->string('tags')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('documents');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_embeds_table */
+/* Embeds */
+DROP TABLE IF EXISTS `embeds`;
+CREATE TABLE IF NOT EXISTS embeds (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    embed_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    embed_url VARCHAR(255) NOT NULL,
+    shortcode VARCHAR(255) DEFAULT NULL,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_embed_id UNIQUE (embed_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('embeds', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('gallery_id')->unique();
+        $table->string('title');
+        $table->string('embed_url');
+        $table->string('shortcode');
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('embeds');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_privacy_policy_table */
+/* Gallery */
+DROP TABLE IF EXISTS `privacy_policy`;
+CREATE TABLE IF NOT EXISTS privacy_policy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    privacy_policy_id VARCHAR(255) NOT NULL,
+    privacy_policy TEXT DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_privacy_policy_id UNIQUE (privacy_policy_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('privacy_policy', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('privacy_policy_id')->unique();
+        $table->string('privacy_policy');
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('privacy_policy');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_terms_conditions_table */
+/* Terms & Conditions */
+DROP TABLE IF EXISTS `terms_conditions`;
+CREATE TABLE IF NOT EXISTS terms_conditions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    terms_conditions_id VARCHAR(255) NOT NULL,
+    terms_conditions TEXT DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_terms_conditions_id UNIQUE (terms_conditions_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('terms_conditions', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('terms_conditions_id')->unique();
+        $table->string('terms_conditions');
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('terms_conditions');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_slider_table */
+/* Slider */
+DROP TABLE IF EXISTS `slider`;
+CREATE TABLE IF NOT EXISTS slider (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    slider_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    sub_text VARCHAR(255) DEFAULT NULL,
+    image VARCHAR(255) NOT NULL,
+    link VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_slider_id UNIQUE (slider_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('slider', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('slider_id')->unique();
+        $table->string('title');
+        $table->string('sub_text')->default(null);
+        $table->string('image');
+        $table->string('link')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('slider');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_banner_video_table */
+/* Banner Video */
+DROP TABLE IF EXISTS `banner_video`;
+CREATE TABLE IF NOT EXISTS banner_video (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    banner_video_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) DEFAULT NULL,
+    sub_text VARCHAR(255) DEFAULT NULL,
+    video VARCHAR(255) DEFAULT NULL,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_banner_video_id UNIQUE (banner_video_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('banner_video', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('banner_video_id')->unique();
+        $table->string('title');
+        $table->string('sub_text');
+        $table->string('video')->default(null);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('banner_video');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_about_us_summary_table */
+/* About Us Summary */
+DROP TABLE IF EXISTS `about_us_summary`;
+CREATE TABLE IF NOT EXISTS about_us_summary (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    about_us_summary_id VARCHAR(255) NOT NULL,
+    about_us_summary TEXT DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_about_us_summary_id UNIQUE (about_us_summary_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('about_us_summary', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('about_us_summary_id')->unique();
+        $table->string('about_us_summary')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('about_us_summary');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_about_us_video_table */
+/* About Us Video */
+DROP TABLE IF EXISTS `about_us_video`;
+CREATE TABLE IF NOT EXISTS about_us_video (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    about_us_video_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) DEFAULT NULL,
+    sub_text VARCHAR(255) DEFAULT NULL,
+    video VARCHAR(255) DEFAULT NULL,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_about_us_video_id UNIQUE (about_us_video_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('about_us_video', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('about_us_video_id')->unique();
+        $table->string('title');
+        $table->string('sub_text');
+        $table->string('video');
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('about_us_video');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_counters_table */
+/* Counters */
+DROP TABLE IF EXISTS `counters`;
+CREATE TABLE IF NOT EXISTS counters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    counters_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    start_count VARCHAR(10) DEFAULT NULL,
+    end_count VARCHAR(10) DEFAULT NULL,
+    prefix VARCHAR(10) DEFAULT NULL,
+    suffix VARCHAR(10) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_counters_id UNIQUE (counters_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('counters', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('counters_id')->unique();
+        $table->string('title');
+        $table->string('start_count')->default(null);
+        $table->string('end_count')->default(null);
+        $table->string('prefix')->default(null);
+        $table->string('suffix')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('counters');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_services_table */
+/* Services */
+DROP TABLE IF EXISTS `services`;
+CREATE TABLE IF NOT EXISTS services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    services_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    image VARCHAR(255) DEFAULT NULL,
+    icon VARCHAR(255) DEFAULT NULL,
+    link VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_services_id UNIQUE (services_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('services', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('services_id')->unique();
+        $table->string('title');
+        $table->string('image')->default(null);
+        $table->string('icon')->default(null);
+        $table->string('link')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('services');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_testimonial_table */
+/* Add Testimonial */
+DROP TABLE IF EXISTS `testimonial`;
+CREATE TABLE IF NOT EXISTS testimonial (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    testimonial_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    organization VARCHAR(255) DEFAULT NULL,
+    image VARCHAR(255) DEFAULT NULL,
+    testimonial VARCHAR(500) DEFAULT NULL,
+    link VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_testimonial_id UNIQUE (testimonial_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('testimonial', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('testimonial_id')->unique();
+        $table->string('name');
+        $table->string('title');
+        $table->string('organization')->default(null);
+        $table->string('image')->default(null);
+        $table->string('testimonial')->default(null);
+        $table->string('link')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('testimonial');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_portfolios_table */
+/* Portfolios */
+DROP TABLE IF EXISTS `portfolios`;
+CREATE TABLE IF NOT EXISTS portfolios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    portfolio_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_portfolio_id UNIQUE (portfolio_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('portfolios', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('portfolios_id')->unique();
+        $table->string('title');
+        $table->string('description')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('portfolios');
+}
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_team_table */
+/* Add Team */
+DROP TABLE IF EXISTS `team`;
+CREATE TABLE IF NOT EXISTS team (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    team_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    title VARCHAR(255) DEFAULT NULL,
+    image VARCHAR(255) DEFAULT NULL,
+    link VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_team_id UNIQUE (team_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('team', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('team_id')->unique();
+        $table->string('name');
+        $table->string('title')->default(null);
+        $table->string('image')->default(null);
+        $table->string('link')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('team');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_faqs_table */
+/* FAQs */
+DROP TABLE IF EXISTS `faqs`;
+CREATE TABLE IF NOT EXISTS faqs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    faq_id VARCHAR(255) NOT NULL,
+    question VARCHAR(255) NOT NULL,
+    answer TEXT DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_faq_id UNIQUE (faq_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('faqs', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('faqs_id')->unique();
+        $table->string('question');
+        $table->string('answer')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('faqs');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_partners_table */
+/* Partners */
+DROP TABLE IF EXISTS `partners`;
+CREATE TABLE IF NOT EXISTS partners (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    partners_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    logo VARCHAR(255) DEFAULT NULL,
+    url VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_partner_id UNIQUE (partner_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('partners', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('partners_id')->unique();
+        $table->string('name');
+        $table->string('description')->default(null);
+        $table->string('logo')->default(null);
+        $table->string('url')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('partners');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_sections_table */
+/* Sections */
+DROP TABLE IF EXISTS `sections`;
+CREATE TABLE IF NOT EXISTS sections (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    section_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content TEXT DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_section_id UNIQUE (section_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('sections', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('sections_id')->unique();
+        $table->string('title');
+        $table->string('content')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('sections');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_content_data_table */
+/* Content Data */
+DROP TABLE IF EXISTS `content_data`;
+CREATE TABLE IF NOT EXISTS content_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    content_data_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    identifier VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_content_data_id UNIQUE (content_data_id),
+    CONSTRAINT unique_content_identifier UNIQUE (identifier)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('content_data', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('content_data_id')->unique();
+        $table->string('title');
+        $table->string('identifier')->unique();
+        $table->string('value');
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('content_data');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_section_display_table */
+/* Section Display */
+DROP TABLE IF EXISTS `section_display`;
+CREATE TABLE IF NOT EXISTS section_display (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    section_display_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    identifier VARCHAR(255) NOT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_section_display_id UNIQUE (section_display_id),
+    CONSTRAINT unique_section_display_name UNIQUE (name)  
+    CONSTRAINT unique_section_display_identifier UNIQUE (identifier)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('section_display', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('section_display_id')->unique();
+        $table->string('name')->unique();
+        $table->string('identifier')->unique();
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('section_display');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_section_order_table */
+/* Section Order */
+DROP TABLE IF EXISTS `section_order`;
+CREATE TABLE IF NOT EXISTS section_order (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    section_order_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    identifier VARCHAR(255) NOT NULL,
+    order INT DEFAULT 10,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_section_order_id UNIQUE (section_order_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('section_order', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('section_order_id')->unique();
+        $table->string('title');
+        $table->string('identifier')->unique();
+        $table->string('order')->default(10);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('section_order');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_gallery_table */
+/* Services */
+DROP TABLE IF EXISTS `gallery`;
+CREATE TABLE IF NOT EXISTS gallery (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    gallery_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    order INT DEFAULT 10,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_gallery_id UNIQUE (gallery_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('gallery', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('gallery_id')->unique();
+        $table->string('title');
+        $table->string('description')->default(null);
+        $table->string('order')->default(10);
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('gallery');
 }

@@ -142,12 +142,12 @@
                   </div>
 
                   <div class="tab-pane" id="passwords">
-                     <form class="form-horizontal validate-form" method="post" action="#" id="quickForm" autocomplete="off">
+                     <form class="form-horizontal validate-form" method="post" action="#" id="passwordForm" autocomplete="off">
                         <div class="form-group row">
                            <div class="offset-sm-2 col-sm-10">
                               <button type="submit" class="btn btn-danger float-right">
-                              <i class="fas fa-save"></i> Save
-                           </button>
+                                 <i class="fas fa-save"></i> Save
+                              </button>
                            </div>
                         </div>
                         <div class="form-group row">
@@ -172,7 +172,7 @@
                   </div>
 
                   <div class="tab-pane" id="account-details">
-                  <form class="validate-form" method="post" action="#" id="quickForm" autocomplete="off">
+                     <form class="form-horizontal validate-form" method="post" action="#" id="accountForm" autocomplete="off">
                         <div class="card-body">
                            <div class="row">
                               <div class="col-12">

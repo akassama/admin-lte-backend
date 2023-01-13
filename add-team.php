@@ -80,6 +80,15 @@
                                  <input type="text" name="Link" class="form-control" id="Link">
                               </div>
                               <div class="form-group col-md-6">
+                                 <label for="Order">Order</label>
+                                 <select class="form-control" aria-label="Select order" id="Order" name="Order">
+											  <option value="" selected>Select order</option>
+											  <option value="1">1</option>
+											  <option value="2">2</option>
+											  <option value="3">3</option>
+											</select>
+                              </div>
+                              <div class="form-group col-md-6">
                                  <label for="Status">Status</label>
                                  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                     <input type="checkbox" class="custom-control-input" name="Status" id="Status" value="1">

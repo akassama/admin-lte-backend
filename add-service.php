@@ -73,7 +73,7 @@
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Icon">Icon <small>(eg: fas fa-user)</small></label>
-                                 <input type="text" name="Icon" class="form-control" id="Icon" required>
+                                 <input type="text" name="Icon" class="form-control" id="Icon">
                               </div>
                               <div class="form-group col-md-6">
                                  <label for="Link">Link</label>
