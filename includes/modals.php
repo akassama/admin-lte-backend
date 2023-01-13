@@ -244,3 +244,37 @@
       </div>
     </div>
   </div>
+
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal">
+  	<form method="post" action="#">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">
+            <i class="fas fa-sign-out-alt"></i> Confirm Logout
+          </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p class="text-dark">
+          	Are you sure you want to Logout?
+          </p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Confirm</button>
+        </div>
+        
+      </div>
+    </div>
+    </form>
+  </div>
+  
