@@ -269,12 +269,6 @@
                 <p>Social Info</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./seo-settings.php" class="nav-link set-active-seo-settings">
-                <i class="far fa-circle nav-icon"></i>
-                <p>SEO Settings</p>
-                </a>
-              </li>
             </ul>
           </li>
           <li class="nav-item">

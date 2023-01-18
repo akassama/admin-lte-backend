@@ -61,8 +61,8 @@
                            <div class="row">
                               <div class="col-md-4">
                                  <div class="form-group">
-                                    <label for="AppName">App Name</label>
-                                    <input type="text" name="AppName" class="form-control" id="AppName" required>
+                                    <label for="SiteName">Site Name</label>
+                                    <input type="text" name="SiteName" class="form-control" id="SiteName" required>
                                  </div>
                               </div>
                               <div class="col-md-4">
@@ -75,6 +75,18 @@
                                  <div class="form-group">
                                     <label for="OptionalEmail">Optional Email</label>
                                     <input type="text" name="OptionalEmail" class="form-control" id="OptionalEmail">
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="Description">Description</label>
+                                    <textarea class="form-control" name="Description" id="Description" row="2" required></textarea>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="form-group">
+                                    <label for="Keywords">Site Keywords</label>
+                                    <textarea class="form-control tags-input" rows="1" name="Keywords" id="Keywords" required></textarea>
                                  </div>
                               </div>
                               <div class="col-md-12">

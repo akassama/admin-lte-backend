@@ -1612,19 +1612,26 @@ public function down()
 //   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
 //
 
-/* php artisan make:migration create_gallery_table */
-/* Services */
-DROP TABLE IF EXISTS `gallery`;
-CREATE TABLE IF NOT EXISTS gallery (
+/* php artisan make:migration create_general_info_table */
+/* General Info */
+DROP TABLE IF EXISTS `general_info`;
+CREATE TABLE IF NOT EXISTS general-info (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    gallery_id VARCHAR(255) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    description VARCHAR(255) DEFAULT NULL,
-    order INT DEFAULT 10,
-    status BIT DEFAULT 0,
+    general_info_id VARCHAR(255) NOT NULL,
+    site_name VARCHAR(255) NOT NULL,
+    primary_email VARCHAR(255) NOT NULL,
+    optional_email VARCHAR(255) DEFAULT NULL,
+    site_description VARCHAR(255) DEFAULT NULL,
+    site_keywords VARCHAR(255) DEFAULT NULL,
+    address VARCHAR(255) DEFAULT NULL,
+    phone_country_code VARCHAR(255) DEFAULT NULL,
+    primary_phone_number VARCHAR(255) NOT NULL,
+    optional_phone_number VARCHAR(255) DEFAULT NULL,
+    site_logo VARCHAR(255) DEFAULT NULL,
+    site_favicon VARCHAR(255) DEFAULT NULL,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT unique_gallery_id UNIQUE (gallery_id)
+    CONSTRAINT unique_general_info_id UNIQUE (general_info_id)
 )  ENGINE=INNODB;
 
 /**
@@ -1634,12 +1641,483 @@ CREATE TABLE IF NOT EXISTS gallery (
  */
 public function up()
 {
-    Schema::create('gallery', function (Blueprint $table) {
+    Schema::create('general_info', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('gallery_id')->unique();
-        $table->string('title');
+        $table->string('general_info_id')->unique();
+        $table->string('site_name');
+        $table->string('primary_email');
+        $table->string('optional_email')->default(null);
+        $table->string('site_description')->default(null);
+        $table->string('site_keywords');
+        $table->string('address');
+        $table->string('primary_phone_number');
+        $table->string('optional_phone_number')->default(null);
         $table->string('description')->default(null);
-        $table->string('order')->default(10);
+        $table->string('site_logo')->default(null);
+        $table->string('site_favicon')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('general_info');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_social_info_table */
+/* Social Info */
+DROP TABLE IF EXISTS `social_info`;
+CREATE TABLE IF NOT EXISTS social_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    social_info_id VARCHAR(255) NOT NULL,
+    facebook_url VARCHAR(255) DEFAULT NULL,
+    twitter_url VARCHAR(255) DEFAULT NULL,
+    instagram_url VARCHAR(255) DEFAULT NULL,
+    linkedin_url VARCHAR(255) DEFAULT NULL,
+    youtube_url VARCHAR(255) DEFAULT NULL,
+    tiktok_url VARCHAR(255) DEFAULT NULL,
+    reddit_url VARCHAR(255) DEFAULT NULL,
+    other_url VARCHAR(255) DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_social_info_id UNIQUE (social_info_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('social_info', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('social_info_id')->unique();
+        $table->string('facebook_url')->default(null);
+        $table->string('twitter_url')->default(null);
+        $table->string('instagram_url')->default(null);
+        $table->string('linkedin_url')->default(null);
+        $table->string('youtube_url')->default(null);
+        $table->string('tiktok_url')->default(null);
+        $table->string('reddit_url')->default(null);
+        $table->string('other_url')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('social_info');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_site_scripts_table */
+/* Site Scripts */
+DROP TABLE IF EXISTS `site_scripts`;
+CREATE TABLE IF NOT EXISTS site_scripts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    site_script_id VARCHAR(255) NOT NULL,
+    script_type VARCHAR(255) NOT NULL,
+    script TEXT DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_site_scripts_id UNIQUE (site_script_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('site_scripts', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('site_script_id')->unique();
+        $table->string('script_type');
+        $table->string('script')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('site_scripts');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_google_settings_table */
+/* Google Settings */
+DROP TABLE IF EXISTS `google_settings`;
+CREATE TABLE IF NOT EXISTS google_settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    site_script_id VARCHAR(255) NOT NULL,
+    google_analytics_key VARCHAR(255) DEFAULT NULL,
+    google_adverts_key VARCHAR(255) DEFAULT NULL,
+    google_oauth_key VARCHAR(255) DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_google_settings_id UNIQUE (site_script_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('google_settings', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('site_script_id')->unique();
+        $table->string('google_analytics_key')->default(null);
+        $table->string('google_adverts_key')->default(null);
+        $table->string('google_oauth_key')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('google_settings');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_facebook_configurations_table */
+/* Facebook Configurations */
+DROP TABLE IF EXISTS `facebook_configurations`;
+CREATE TABLE IF NOT EXISTS facebook_configurations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    facebook_configuration_id VARCHAR(255) NOT NULL,
+    facebook_comment_id VARCHAR(255) DEFAULT NULL,
+    show_fb_comments BIT DEFAULT 0,
+    facebook_oauth_key VARCHAR(255) DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_facebook_configurations_id UNIQUE (facebook_configuration_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('facebook_configurations', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('facebook_configuration_id')->unique();
+        $table->string('facebook_comment_id')->default(null);
+        $table->boolean('show_fb_comments')->default(0);
+        $table->string('facebook_oauth_key')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('facebook_configurations');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_twitter_settings_table */
+/* Twitter Settings */
+DROP TABLE IF EXISTS `twitter_settings`;
+CREATE TABLE IF NOT EXISTS twitter_settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    twitter_setting_id VARCHAR(255) NOT NULL,
+    twitter_feed_key VARCHAR(255) DEFAULT NULL,
+    show_twitter_feed BIT DEFAULT 0,
+    facebook_oauth_key VARCHAR(255) DEFAULT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_twitter_settings_id UNIQUE (twitter_setting_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('twitter_settings', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('twitter_setting_id')->unique();
+        $table->string('twitter_feed_key')->default(null);
+        $table->boolean('show_twitter_feed')->default(0);
+        $table->string('facebook_oauth_key')->default(null);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('twitter_settings');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_email_config_table */
+/* Services */
+DROP TABLE IF EXISTS `email_config`;
+CREATE TABLE IF NOT EXISTS email_config (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email_config_id VARCHAR(255) NOT NULL,
+    sendgrid_api_key VARCHAR(255) DEFAULT NULL,
+    mailjet_api_key VARCHAR(255) DEFAULT NULL,
+    mailjet_secret_key VARCHAR(255) DEFAULT NULL,
+    mailgun_key VARCHAR(255) DEFAULT NULL,
+    mailgun_domain VARCHAR(255) DEFAULT NULL,
+    netcore_api_key VARCHAR(255) DEFAULT NULL,
+    other_api_key VARCHAR(255) DEFAULT NULL,
+    other_secret_key VARCHAR(255) DEFAULT NULL,
+    active_api VARCHAR(255) NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_email_config_id UNIQUE (email_config_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('email_config', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('email_config_id')->unique();
+        $table->string('sendgrid_api_key')->default(null);
+        $table->string('mailjet_api_key')->default(null);
+        $table->string('mailjet_secret_key')->default(null);
+        $table->string('mailgun_key')->default(null);
+        $table->string('mailgun_domain')->default(null);
+        $table->string('netcore_api_key')->default(null);
+        $table->string('other_api_key')->default(null);
+        $table->string('other_secret_key')->default(null);
+        $table->string('active_api');
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('email_config');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_cookie_concent_table */
+/* Twitter Settings */
+DROP TABLE IF EXISTS `cookie_concent`;
+CREATE TABLE IF NOT EXISTS cookie_concent (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cookie_concent_id VARCHAR(255) NOT NULL,
+    cookie_concent_script VARCHAR(255) DEFAULT NULL,
+    show_cookie_concent BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_cookie_concent_id UNIQUE (cookie_concent_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('cookie_concent', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('cookie_concent_id')->unique();
+        $table->string('cookie_concent_script')->default(null);
+        $table->boolean('show_cookie_concent')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('cookie_concent');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_share_this_table */
+/* ShareThis Settings */
+DROP TABLE IF EXISTS `share_this`;
+CREATE TABLE IF NOT EXISTS share_this (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    share_this_id VARCHAR(255) NOT NULL,
+    show_share_this BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_share_this_id UNIQUE (share_this_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('share_this', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('share_this_id')->unique();
+        $table->boolean('show_share_this')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('share_this');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_languages_table */
+/* Languages Settings */
+DROP TABLE IF EXISTS `languages`;
+CREATE TABLE IF NOT EXISTS languages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    language_id VARCHAR(255) NOT NULL,
+    language VARCHAR(255) NOT NULL,
+    iso VARCHAR(255) NOT NULL,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_language_id UNIQUE (language_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('languages', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('language_id')->unique();
+        $table->string('language');
+        $table->string('iso');
         $table->boolean('status')->default(0);
         $table->timestamps();
     });
@@ -1652,5 +2130,211 @@ public function up()
  */
 public function down()
 {
-    Schema::dropIfExists('gallery');
+    Schema::dropIfExists('languages');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+
+/* php artisan make:migration create_subscriptions_table */
+/* Subscriptions Settings */
+DROP TABLE IF EXISTS `subscriptions`;
+CREATE TABLE IF NOT EXISTS subscriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subscription_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    show_subscriptions BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_subscription_id UNIQUE (subscription_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('subscriptions', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('subscription_id')->unique();
+        $table->string('name');
+        $table->string('email');
+        $table->boolean('show_subscriptions')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('subscriptions');
+}
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+
+/* php artisan make:migration create_themes_table */
+/* Themes Settings */
+DROP TABLE IF EXISTS `themes`;
+CREATE TABLE IF NOT EXISTS themes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    theme_id VARCHAR(255) NOT NULL,
+    theme_name VARCHAR(255) NOT NULL,
+    theme_identifier VARCHAR(255) NOT NULL,
+    theme_image VARCHAR(255) NOT NULL,
+    theme_folder_path VARCHAR(255) NOT NULL,
+    status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_theme_id UNIQUE (theme_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('themes', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('theme_id')->unique();
+        $table->string('theme_name');
+        $table->string('theme_identifier');
+        $table->string('theme_image');
+        $table->string('theme_folder_path');
+        $table->boolean('status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('themes');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+
+/* php artisan make:migration create_search_data_table */
+/* Search Data Settings */
+DROP TABLE IF EXISTS `search_data`;
+CREATE TABLE IF NOT EXISTS search_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    search_data_id VARCHAR(255) NOT NULL,
+    search_display VARCHAR(255) NOT NULL,
+    search_keywords VARCHAR(255) NOT NULL,
+    result_link VARCHAR(255) NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_search_data_id UNIQUE (search_data_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('search_data', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('search_data_id')->unique();
+        $table->string('search_display');
+        $table->string('search_keywords');
+        $table->string('result_link');
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('search_data');
+}
+
+
+//        __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+//       / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//      / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//     / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//    / // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // /
+//   /_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_//_/
+//
+
+/* php artisan make:migration create_notifications_table */
+/* Notifications */
+DROP TABLE IF EXISTS `notifications`;
+CREATE TABLE IF NOT EXISTS notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    notification_id VARCHAR(255) NOT NULL,
+    user VARCHAR(255) NOT NULL,
+    notification VARCHAR(255) DEFAULT NULL,
+    view_status BIT DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT unique_notification_id UNIQUE (notification_id)
+)  ENGINE=INNODB;
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    Schema::create('notifications', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('notification_id')->unique();
+        $table->string('user');
+        $table->string('notification')->default(null);
+        $table->boolean('view_status')->default(0);
+        $table->timestamps();
+    });
+}
+
+/**
+ * Reverse the migrations.
+ *
+ * @return void
+ */
+public function down()
+{
+    Schema::dropIfExists('notifications');
 }

@@ -86,6 +86,15 @@
                                  <label for="SendGridApiKey" class="form-label">NetCore API Key</label>
                                  <input type="text" class="form-control count-reach" name="SendGridApiKey" id="SendGridApiKey" maxlength="100" data-chars-max="100" data-msg-color="danger">
                               </div>
+                              <hr/>
+                              <div class="mb-3 col-md-12">
+                                 <label for="OtherApiKey" class="form-label">Other API Key</label>
+                                 <input type="text" class="form-control count-reach" name="OtherApiKey" id="OtherApiKey" maxlength="100" data-chars-max="100" data-msg-color="danger">
+                              </div>
+                              <div class="mb-3 col-md-12">
+                              <label for="OtherApiSecret" class="form-label">Other API Secret</label>
+                                 <input type="text" class="form-control count-reach" name="OtherApiSecret" id="OtherApiSecret" maxlength="100" data-chars-max="100" data-msg-color="danger">
+                              </div>
                               
                               <div class="mb-3 col-md-12">
                                  <div class="form-group">
@@ -96,6 +105,7 @@
                                        <option value="MailJet">MailJet</option>
                                        <option value="Mailgun">Mailgun</option>
                                        <option value="NetCore">NetCore</option>
+                                       <option value="Other">Other</option>
                                     </select>
                                  </div>
                               </div>

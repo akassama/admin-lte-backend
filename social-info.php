@@ -80,6 +80,14 @@
                                  <input type="url" name="YouTubeUrl" class="form-control" id="YouTubeUrl">
                               </div>
                               <div class="form-group col-md-6">
+                                 <label for="TikTokUrl">TikTok URL</label>
+                                 <input type="url" name="TikTokUrl" class="form-control" id="TikTokUrl">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label for="RedditUrl">Reddit URL</label>
+                                 <input type="url" name="RedditUrl" class="form-control" id="RedditUrl">
+                              </div>
+                              <div class="form-group col-md-6">
                                  <label for="OtherUrl">Other URL</label>
                                  <input type="url" name="OtherUrl" class="form-control" id="OtherUrl">
                               </div>
